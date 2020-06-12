@@ -26,7 +26,7 @@ mkdir -p $VENDOR_DIR
 cd $VENDOR_DIR
 mkdir -p sox
 cd sox
-curl -L --silent $DOWNLOAD_URL | tar -jxf --strip-components=1
+curl -L --silent $DOWNLOAD_URL | tar xJ --strip-components=1
 
 cd sox-14.4.2
 ./configure --prefix=$VENDOR_DIR/sox/ --disable-shared --enable-static
