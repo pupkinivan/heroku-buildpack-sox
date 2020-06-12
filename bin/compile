@@ -26,10 +26,14 @@ mkdir -p $VENDOR_DIR
 cd $VENDOR_DIR
 mkdir -p sox
 cd sox
-curl -L --silent $DOWNLOAD_URL | tar xj --strip-components=1
+curl -L --silent $DOWNLOAD_URL | tar xj
+
+echo $(ls)
 
 cd sox-14.4.2
-./configure --prefix=$VENDOR_DIR/sox/ --disable-shared --enable-static
+./configure --prefix=$HOME/$BUILD_DIR/$VENDOR_DIR/sox --disable-shared --enable-static \
+  --without-flac --without-id3tag --without-libltdl --without-png --without-sndfile \
+  --without-gsm
 make
 make install
 
