@@ -33,7 +33,7 @@ curl -L --silent $DOWNLOAD_URL | tar xj --strip-components=1
 
 echo $(gcc --version)
 
-PREFIX=$HOME/$BUILD_DIR/$VENDOR_DIR
+PREFIX=$HOME$BUILD_DIR/$VENDOR_DIR
 echo $PREFIX
 
 ./configure --prefix=$PREFIX/sox --disable-shared --enable-static \
