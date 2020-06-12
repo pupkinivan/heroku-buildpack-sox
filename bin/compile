@@ -13,7 +13,7 @@ indent() {
 
 echo "-----> Install SoX"
 BUILD_DIR=$1
-VENDOR_DIR="/vendor"
+VENDOR_DIR="vendor"
 
 # DOWNLOAD_URL="http://security.ubuntu.com/ubuntu/pool/universe/s/sox/sox_14.4.2-3ubuntu0.18.04.1_amd64.deb"
 
@@ -33,7 +33,7 @@ curl -L --silent $DOWNLOAD_URL | tar xj --strip-components=1
 
 echo $(gcc --version)
 
-PREFIX=$HOME$VENDOR_DIR
+PREFIX=$HOME/$VENDOR_DIR
 echo $PREFIX
 
 ./configure --prefix=$PREFIX/sox --disable-shared --enable-static \
