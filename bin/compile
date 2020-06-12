@@ -33,9 +33,11 @@ curl -L --silent $DOWNLOAD_URL | tar xj --strip-components=1
 
 echo $(gcc --version)
 
-./configure --prefix=$HOME/$BUILD_DIR/$VENDOR_DIR/sox --disable-shared --enable-static \
-  --without-flac --without-id3tag --without-libltdl --without-png --without-sndfile \
-  --without-gsm --silent
+PREFIX=$HOME/$BUILD_DIR/$VENDOR_DIR
+echo $PREFIX
+
+./configure --prefix=$PREFIX/sox --disable-shared --enable-static \
+  --without-flac --without-id3tag --without-libltdl --without-png --silent
 make
 make install
 
