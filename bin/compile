@@ -33,7 +33,7 @@ curl -L --silent $DOWNLOAD_URL | tar xj --strip-components=1
 
 ./configure --prefix=$HOME/$BUILD_DIR/$VENDOR_DIR/sox --disable-shared --enable-static \
   --without-flac --without-id3tag --without-libltdl --without-png --without-sndfile \
-  --without-gsm
+  --without-gsm --silent
 make
 make install
 
