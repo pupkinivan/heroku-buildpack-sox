@@ -33,7 +33,7 @@ curl -L --silent $DOWNLOAD_URL | tar xj --strip-components=1
 
 echo $(gcc --version)
 
-PREFIX=$HOME$BUILD_DIR/$VENDOR_DIR
+PREFIX=$HOME$VENDOR_DIR
 echo $PREFIX
 
 ./configure --prefix=$PREFIX/sox --disable-shared --enable-static \
@@ -43,7 +43,6 @@ make install
 
 echo "exporting PATH" | indent
 
-# DE DONDE SACO .profile.d/ffmpeg.sh??
 # Estoy creando el archivo para que se agregue la carpeta al PATH.
 PROFILE_PATH="$BUILD_DIR/.profile.d/sox.sh"
 mkdir -p $(dirname $PROFILE_PATH)
