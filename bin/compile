@@ -31,6 +31,8 @@ curl -L --silent $DOWNLOAD_URL | tar xj --strip-components=1
 #echo $(ls)
 #cd sox-14.4.2
 
+echo $(gcc --version)
+
 ./configure --prefix=$HOME/$BUILD_DIR/$VENDOR_DIR/sox --disable-shared --enable-static \
   --without-flac --without-id3tag --without-libltdl --without-png --without-sndfile \
   --without-gsm --silent
