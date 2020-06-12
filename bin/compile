@@ -7,6 +7,9 @@
 # CACHE_DIR contents are persistent
 # ENV_DIR contains a file for each of the app's configuration vars
 
+indent() {
+  sed -u 's/^/       /'
+}
 
 echo "-----> Install SoX"
 BUILD_DIR=$1
