@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# 1 arg: BUILD_DIR
+# BUILD_DIR will be the app's location
+
+# The script returns a YAML formatted hash with two keys: `addons` (list of default addons) and `default_process_types` (hash of default Procfile entries).
+# The script will only be called if it is present.
+
+cat << EOF
+---
+addons:
+
+default-process-types:
+  web: python3 app.py
+EOF
