@@ -37,8 +37,9 @@ PREFIX=$HOME/$VENDOR_DIR
 echo "Prefix for building SoX: " | $PREFIX
 
 ./configure --prefix=$PREFIX/sox --disable-shared --enable-static \
-#--without-flac --without-id3tag --without-libltdl --without-png \
-#--with-oggvorbis --with-wavpack --silent
+  --without-flac --without-id3tag --without-libltdl --without-png \
+  --silent
+#  --with-oggvorbis --with-wavpack
 make
 make install
 
