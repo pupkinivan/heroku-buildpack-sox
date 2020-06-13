@@ -34,10 +34,11 @@ curl -L --silent $DOWNLOAD_URL | tar xj --strip-components=1
 echo $(gcc --version)
 
 PREFIX=$HOME/$VENDOR_DIR
-echo $PREFIX
+echo "Prefix for building SoX: " | $PREFIX
 
 ./configure --prefix=$PREFIX/sox --disable-shared --enable-static \
-  --without-flac --without-id3tag --without-libltdl --without-png --silent
+  --without-flac --without-id3tag --without-libltdl --without-png \
+  --with-oggvorbis --with-wavpack --silent
 make
 make install
 
