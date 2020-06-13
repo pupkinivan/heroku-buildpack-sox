@@ -1,7 +1,5 @@
 #!/bin/sh
 
-
-
 # 3 args: BUILD_DIR, CACHE_DIR, ENV_DIR
 # BUILD_DIR will be the app's location
 # CACHE_DIR contents are persistent
@@ -39,8 +37,8 @@ PREFIX=$HOME/$VENDOR_DIR
 echo "Prefix for building SoX: " | $PREFIX
 
 ./configure --prefix=$PREFIX/sox --disable-shared --enable-static \
-  --without-flac --without-id3tag --without-libltdl --without-png \
-  --with-oggvorbis --with-wavpack --silent
+#--without-flac --without-id3tag --without-libltdl --without-png \
+#--with-oggvorbis --with-wavpack --silent
 make
 make install
 
@@ -50,5 +48,3 @@ echo "exporting PATH" | indent
 PROFILE_PATH="$BUILD_DIR/.profile.d/sox.sh"
 mkdir -p $(dirname $PROFILE_PATH)
 echo 'export PATH="$PATH:${HOME}/vendor/sox"' >> $PROFILE_PATH
-
-# -----------------------------------------------------------------
