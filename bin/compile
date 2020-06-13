@@ -33,8 +33,7 @@ curl -L --silent $DOWNLOAD_URL | tar xj --strip-components=1
 
 #echo $(ls)
 #cd sox-14.4.2
-
-echo $(gcc --version)
+#echo $(gcc --version)
 
 PREFIX=$HOME/$VENDOR_DIR
 echo "Prefix for building SoX: " | $PREFIX
@@ -43,7 +42,7 @@ echo "Prefix for building SoX: " | $PREFIX
   --without-flac --without-id3tag --without-libltdl --without-png \
   --with-oggvorbis --with-wavpack --silent
 make
-#  make install
+make install
 
 echo "exporting PATH" | indent
 
